@@ -160,13 +160,17 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 30.0),
             Center(
-              child: ElevatedButton(onPressed: (){
+              child: ElevatedButton(
+                onPressed: (){
                 //print("Success");
               },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.deepOrange)
+              ),
                   child: Text(
                     "Contact Me",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black87,
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -177,6 +181,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.deepOrange,
         onPressed: () {
           setState(() {
             uniLevel += 1;
@@ -184,7 +189,7 @@ class _HomeState extends State<Home> {
         },
         child: const Icon(
           Icons.add,
-          color: Colors.deepOrange,
+          color: Colors.black87,
           size: 35.0,
         ),
       ),
