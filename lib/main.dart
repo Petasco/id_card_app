@@ -6,9 +6,15 @@ void main() {
   ));
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   //const Home({super.key});
 
+  int uniLevel = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +29,7 @@ class Home extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          
+
           children: [
             Center(
               child: CircleAvatar(
@@ -95,6 +101,26 @@ class Home extends StatelessWidget {
             ),
             SizedBox(height: 30.0),
 
+            Text(
+              "UNIVERSITY LEVEL:",
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14.0,
+                  letterSpacing: 2.0
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              "$uniLevel",
+              style: TextStyle(
+                color: Colors.deepOrange,
+                fontSize: 20.0,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30.0),
+
             Row(
               children: [
                 Icon(
@@ -151,7 +177,11 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            uniLevel += 1;
+          });
+        },
         child: const Icon(
           Icons.add,
           color: Colors.deepOrange,
