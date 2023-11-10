@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.deepOrange,
         elevation: 0.0,
       ),
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,8 +132,30 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-
+            SizedBox(height: 30.0),
+            Center(
+              child: ElevatedButton(onPressed: (){
+                //print("Success");
+              },
+                  child: Text(
+                    "Contact Me",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+              ),
+            ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.add,
+          color: Colors.deepOrange,
+          size: 35.0,
         ),
       ),
     );
